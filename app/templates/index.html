@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask App</title>
-    <!-- Add your CSS files here -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+    <!-- เชื่อมโยงกับไฟล์ CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="abc">
-        <h1>Welcome to Your Flask App!</h1>
-        <p>This is a simple Flask application.</p>
+        <h1>Welcome to Our App!</h1>
+        <p>This is a simple Web application.</p>
         <p>Feel free to modify this page to suit your needs.</p>
         <button id="greetButton">Click me to greet!</button>
+        <button id="showButton" background-color: green;>แหกตาดู</button>
     </div>
     
-    <!-- Add your JavaScript files here -->
+    <!-- เพิ่มไฟล์ JavaScript -->
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

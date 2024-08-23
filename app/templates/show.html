@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
+</head>
+<body>
+    <div>
+        <h1>Data from test001 Table</h1>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <!-- ปรับหัวข้อคอลัมน์ตามชื่อคอลัมน์ในตาราง test001 -->
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <!-- แสดงข้อมูลแต่ละแถว -->
+                    <td>{{ row['id'] }}</td>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['sex'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
