@@ -8,13 +8,20 @@ body {
     background-color: #f4f4f4;
 }
 
-table {
-    border-collapse: collapse;
+.table-container {
     width: 80%;
     max-width: 800px;
     margin: 20px auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative; /* Allows positioning of the button inside the container */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 40px; /* Ensures there is space between the button and the table */
 }
 
 th, td {
@@ -29,4 +36,64 @@ th {
 
 tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+/* Pagination Styles */
+.pagination-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.pagination-controls {
+    display: inline-block;
+}
+
+.pagination-link {
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.pagination-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination-disabled {
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    color: #ddd;
+    border-radius: 4px;
+}
+
+.pagination-current {
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    color: #000;
+    border-radius: 4px;
+}
+
+.add-user-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Position the button inside the container */
+    top: 20px; /* Adjust the distance from the top of the container */
+    right: 20px; /* Adjust the distance from the right of the container */
+}
+
+.add-user-button:hover {
+    background-color: #0056b3;
 }

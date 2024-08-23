@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
 </head>
 <body>
+    <div class="button-container">
+        <a href="{{ url_for('add_user_page') }}" class="add-user-button">Add User</a>
+    </div>
     <div>
         <h1>Data from test001 Table</h1>
     </div>
@@ -15,23 +18,40 @@
         <table>
             <thead>
                 <tr>
-                    <!-- ปรับหัวข้อคอลัมน์ตามชื่อคอลัมน์ในตาราง test001 -->
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
                 {% for row in rows %}
                 <tr>
-                    <!-- แสดงข้อมูลแต่ละแถว -->
                     <td>{{ row['id'] }}</td>
                     <td>{{ row['name'] }}</td>
-                    <td>{{ row['sex'] }}</td>
+                    <td>{{ row['age'] }}</td>
+                    <td>{{ row['email'] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    <div class="pagination-container">
+        <div class="pagination-controls">
+            {% if has_previous %}
+                <a class="pagination-link" href="{{ url_for('show', page=page_number - 1) }}">Previous</a>
+            {% else %}
+                <span class="pagination-disabled">Previous</span>
+            {% endif %}
+            
+            <span class="pagination-current">Page {{ page_number }}</span>
+            
+            {% if has_next %}
+                <a class="pagination-link" href="{{ url_for('show', page=page_number + 1) }}">Next</a>
+            {% else %}
+                <span class="pagination-disabled">Next</span>
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>
