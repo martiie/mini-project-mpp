@@ -1,4 +1,4 @@
 # Ignore Python cache files
 __pycache__/
 
-app/model/API_keys_db.json
+API_keys_db.json
